@@ -8,6 +8,7 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/clerk-react";
+import Breadcrumbs from "./Breadcrumbs";
 
 type HeaderProps = {};
 
@@ -24,6 +25,7 @@ const Header: FC<HeaderProps> = ({}) => {
       )}
 
       {/* Breadcrumbs  */}
+      <Breadcrumbs />
 
       <div className="">
         <SignedOut>
