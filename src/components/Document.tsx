@@ -5,10 +5,14 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 
 import { db } from "@/firebase";
 import { doc, updateDoc } from "firebase/firestore";
+import { useOwner } from "@/lib/useOwner";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Editor from "@/components/Editor";
+import DeleteDocument from "./DeleteDocument";
+import InviteUser from "./InviteUser";
+import ManageUsers from "./ManageUsers";
 
 type DocumentProps = {
   id: string;
@@ -17,7 +21,7 @@ type DocumentProps = {
 const Document: FC<DocumentProps> = ({ id }) => {
   const [input, setInput] = useState("");
   const [isUpdating, startTransition] = useTransition();
-  // const { isOwner } = useOwner();
+  const isOwner = useOwner();
 
   const [data, loading, error] = useDocumentData(doc(db, "documents", id));
 
@@ -50,11 +54,21 @@ const Document: FC<DocumentProps> = ({ id }) => {
           </Button>
 
           {/* isOwner && inviteUser, delete Document */}
+          {isOwner && (
+            <>
+              {/* invite */}
+              <InviteUser />
+
+              {/* delete */}
+              <DeleteDocument />
+            </>
+          )}
         </form>
       </div>
 
-      <div className="">
+      <div className="flex max-w-6xl mx-auto justify-between items-center mb-5">
         {/* manage users */}
+        <ManageUsers />
         {/* avatars */}
       </div>
 

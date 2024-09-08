@@ -66,7 +66,7 @@ const FollowPointer: FC<FollowPointerProps> = ({ x, y, info }) => {
           scale: 0.5,
           opacity: 0,
         }}
-        className="px-4 py-2 bg-neutral-200 text-white font-bold whitespace-nowrap min-w-max text-xs rounded-full"
+        className="px-4 py-2 bg-neutral-200 text-black font-bold whitespace-nowrap min-w-max text-xs rounded-full"
       >
         {info.name || info.email}
       </motion.div>
