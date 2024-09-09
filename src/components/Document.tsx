@@ -13,6 +13,7 @@ import Editor from "@/components/Editor";
 import DeleteDocument from "./DeleteDocument";
 import InviteUser from "./InviteUser";
 import ManageUsers from "./ManageUsers";
+import Avatars from "./Avatars";
 
 type DocumentProps = {
   id: string;
@@ -69,7 +70,9 @@ const Document: FC<DocumentProps> = ({ id }) => {
       <div className="flex max-w-6xl mx-auto justify-between items-center mb-5">
         {/* manage users */}
         <ManageUsers />
+
         {/* avatars */}
+        <Avatars />
       </div>
 
       {/* collaborative editor */}
