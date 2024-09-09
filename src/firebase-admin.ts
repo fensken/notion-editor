@@ -6,8 +6,6 @@ import { getFirestore } from "firebase-admin/firestore";
 
 // Your web app's Firebase configuration
 
-const serviceKey = require("@/service_key.json");
-
 let app: App;
 
 // Initialize Firebase
