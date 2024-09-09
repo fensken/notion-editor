@@ -1,13 +1,13 @@
 "use client";
 
 import { FC } from "react";
-import { useUser } from "@clerk/nextjs";
 import {
   SignedIn,
   SignedOut,
   SignInButton,
   UserButton,
-} from "@clerk/clerk-react";
+  useUser,
+} from "@clerk/nextjs";
 import Breadcrumbs from "./Breadcrumbs";
 
 type HeaderProps = {};
