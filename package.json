@@ -40,6 +40,7 @@
     "tailwindcss-animate": "^1.0.7",
     "use-sync-external-store": "^1.2.2",
     "vaul": "^0.9.1",
+    "vercel": "^37.4.0",
     "yjs": "^13.6.18"
   },
   "devDependencies": {
