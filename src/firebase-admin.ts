@@ -1,11 +1,17 @@
-import admin from "firebase-admin";
-
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_KEY!);
+import * as admin from "firebase-admin";
 
 if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
+  try {
+    admin.initializeApp({
+      credential: admin.credential.cert({
+        projectId: process.env.FIREBASE_PROJECT_ID,
+        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+        privateKey: process.env.FIREBASE_PRIVATE_KEY!.replace(/\\n/g, "\n"),
+      }),
+    });
+  } catch (error) {
+    console.log("Firebase admin initialization error", error);
+  }
 }
 
 export default admin;
