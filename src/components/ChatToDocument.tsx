@@ -95,7 +95,7 @@ const ChatToDocument: FC<ChatToDocumentProps> = ({ doc }) => {
               <BotIcon className="w-10 flex-shrink-0" />
 
               <p className="font-bold">
-                GTP {isPending ? "is thinking..." : "Says: "}
+                GPT {isPending ? "is thinking..." : "Says: "}
               </p>
             </div>
 
